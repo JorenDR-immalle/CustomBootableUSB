@@ -1,0 +1,44 @@
+
+
+color magenta/white white/magenta black/white black/white 
+
+### MENU END
+title MAIN MENU 
+configfile /menu.lst
+### MENU END
+
+
+### MENU START
+title Boot Repair\n
+ls /images/bootrepairdiskbit.iso || find --set-root /images/bootrepairdiskbit.iso
+map --heads=0 --sectors-per-track=0 /images/bootrepairdiskbit.iso (0xff) || map --heads=0 --sectors-per-track=0 --mem /images/bootrepairdiskbit.iso (0xff)
+map --hook
+chainloader (0xff)
+### MENU END
+
+
+### MENU START
+title Cloning Utility\nCLONEZILLA-LIVE-2.6.3-7-AMD64.ISO  (276 MB)\n
+ls /images/clonezillaliveamd64.iso || find --set-root /images/clonezillaliveamd64.iso
+map --heads=0 --sectors-per-track=0 /images/clonezillaliveamd64.iso (0xff) || map --heads=0 --sectors-per-track=0 --mem /images/clonezillaliveamd64.iso (0xff)
+map --hook
+chainloader (0xff)
+### MENU END
+
+
+### MENU START
+title Boot And Nuke\nDBAN-2.3.0_I586.ISO  (15,9 MB)\nDarik's Boot and Nuke (DBAN) is a self-contained boot disk that securely\nwipes the hard disks of most computers. DBAN will automatically and\ncompletely delete the contents of any hard disk that it can detect, which\nmakes it an appropriate utility for bulk or emergency data destruction.
+ls /images/dbani586.iso || find --set-root /images/dbani586.iso
+map --heads=0 --sectors-per-track=0 /images/dbani586.iso (0xff) || map --heads=0 --sectors-per-track=0 --mem /images/dbani586.iso (0xff)
+map --hook
+chainloader (0xff)
+### MENU END
+
+
+### MENU START
+title Backup\nREDOBACKUP-LIVECD-1.0.4.ISO  (249 MB)\n
+ls /images/redobackuplivecd.iso || find --set-root /images/redobackuplivecd.iso
+map --heads=0 --sectors-per-track=0 /images/redobackuplivecd.iso (0xff) || map --heads=0 --sectors-per-track=0 --mem /images/redobackuplivecd.iso (0xff)
+map --hook
+chainloader (0xff)
+### MENU END

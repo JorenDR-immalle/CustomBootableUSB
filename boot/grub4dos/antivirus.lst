@@ -1,0 +1,17 @@
+
+
+color magenta/white white/magenta black/white black/white 
+
+### MENU END
+title MAIN MENU 
+configfile /menu.lst
+### MENU END
+
+
+### MENU START
+title AVG Rescue CD\nAVG_ARL_CDI_ALL_120_160420A12074.ISO  (169 MB)\n
+ls /images/avgarlcdialla.iso || find --set-root /images/avgarlcdialla.iso
+map --heads=0 --sectors-per-track=0 /images/avgarlcdialla.iso (0xff) || map --heads=0 --sectors-per-track=0 --mem /images/avgarlcdialla.iso (0xff)
+map --hook
+chainloader (0xff)
+### MENU END

@@ -1,0 +1,17 @@
+
+
+color magenta/white white/magenta black/white black/white 
+
+### MENU END
+title MAIN MENU 
+configfile /menu.lst
+### MENU END
+
+
+### MENU START
+title Ubuntu\nUBUNTU-18.04.3-DESKTOP-AMD64.ISO  (1,93 GB)\n
+ls /images/ubuntudesktopamd64.iso || find --set-root /images/ubuntudesktopamd64.iso
+map --heads=0 --sectors-per-track=0 /images/ubuntudesktopamd64.iso (0xff) || map --heads=0 --sectors-per-track=0 --mem /images/ubuntudesktopamd64.iso (0xff)
+map --hook
+chainloader (0xff)
+### MENU END

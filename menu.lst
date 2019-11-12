@@ -1,0 +1,39 @@
+
+color magenta/white white/magenta black/white black/white 
+timeout 10
+
+
+### MENU START
+title Boot from hard drive
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+chainloader (hd0,0)
+### MENU END
+
+
+### MENU END
+title Linux
+configfile /boot/grub4dos/linux.lst
+### MENU END
+
+
+### MENU END
+title Utility
+configfile /boot/grub4dos/utility.lst
+### MENU END
+
+
+### MENU END
+title Antivirus
+configfile /boot/grub4dos/antivirus.lst
+### MENU END
+
+
+### MENU START
+title Help!\n
+ls /images/help.iso || find --set-root /images/help.iso
+map --heads=0 --sectors-per-track=0 /images/help.iso (0xff) || map --heads=0 --sectors-per-track=0 --mem /images/help.iso (0xff)
+map --hook
+chainloader (0xff)
+### MENU END
